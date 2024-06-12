@@ -27,16 +27,18 @@ function createPost () {
             
             // Show alert to success create post in page
             showAlertSuccessLogin('Created Post Successfully!', ``, 'success');
-            // reload the page after 2 seceond
-            setTimeout(() => {
-                location.reload(); 
-            },2000)
+
+            removeModalBackdrop();
+            setTimeout (() => {
+                location.reload();
+            },2000);
         })
         .catch((err) => {
             // Access to login modal to disable
             const modalRegister = document.querySelector('#post-modal');
             const modalInstance = bootstrap.Modal.getInstance(modalRegister);
             modalInstance.hide();
+            removeModalBackdrop();
 
             // Show alert to success create post in page
             showAlertSuccessLogin('Created Post Faild!: ', `${err.response.data.message}`, 'danger');

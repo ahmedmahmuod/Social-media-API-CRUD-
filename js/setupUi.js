@@ -15,6 +15,7 @@ function setupUiLogin() {
   } else {
     // Show icon add post
     showIconPost('visible');
+    removeModalBackdrop();
     logOutBtn.style.setProperty("display", "block", "important");
     registerBtn.style.setProperty("display", "none", "important");
     loginBtn.style.setProperty("display", "none", "important");
@@ -47,6 +48,7 @@ function showAlertSuccessLogin(message, name, type) {
             '   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>',
             '</div>'
         ].join('');
+        
         alertPlaceholder.append(wrapper);
         setTimeout(() => {
             wrapper.remove();
@@ -56,3 +58,9 @@ function showAlertSuccessLogin(message, name, type) {
 }
 
 
+function closeOverLay () {
+  // access to the element overlay
+  let modalOver = document.querySelector ('.modal-backdrop');
+  modalOver.classList.remove('show');
+  modalOver.classList.add('hidden');
+}

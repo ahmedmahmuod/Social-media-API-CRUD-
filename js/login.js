@@ -30,11 +30,13 @@ function getUserAndPass() {
                 const modalLogin = document.querySelector('#login-modal');
                 const modalInstance = bootstrap.Modal.getInstance(modalLogin);
                 modalInstance.hide();
-                setupUiLogin();
-
                 // Show alert success login
                 showAlertSuccessLogin('Login Successfully!', `Hello ${userNameV}`, 'success');
-
+                removeModalBackdrop();
+                setTimeout (() => {
+                    location.reload();
+                },1000);
+    
                 postEdit();
                 
             }).catch(() => {

@@ -64,7 +64,6 @@ async function getGlobalPosts(countPage) {
         console.error('Error fetching posts:', error);
     }
     profile();
-    // profileClicked();
     postEdit();
 }
 
@@ -232,6 +231,7 @@ async function loadPostDetails() {
                         if (getTocenAuth) {
                             await axios.post(`https://tarmeezacademy.com/api/v1/posts/${postId}/comments`,{"body": `${commentBody}`},{headers: {"Accept": "application/json","Authorization": `Bearer ${getTocenAuth}`}});
                                 showAlertSuccessLogin('Comment Added Successfully', `${commentBody}`, 'success');
+
                                 setTimeout (() => {
                                     location.reload();
                                 },2000);
@@ -335,8 +335,12 @@ function postEdit() {
                                 const modalInstance = bootstrap.Modal.getInstance(modalRegister);
                                 modalInstance.hide();
                                 loader(show = false);
+                                removeModalBackdrop();
 
-                
+                                setTimeout (() => {
+                                    location.reload();
+                                },2000);
+
                             } else {
                                 showAlertSuccessLogin('Failed to update post!', '', 'danger');
                                 console.log('Failed to update post:', response);
@@ -383,10 +387,12 @@ function postEdit() {
 
                                 // Show alert to success create post in page
                                 showAlertSuccessLogin('Post Deleted Successfully!', '', 'success');
+                                loader(show = false);
+                                
+                                removeModalBackdrop();
                                 setTimeout (() => {
                                     location.reload();
-                                },2000);
-                                loader(show = false);
+                                },1000);
                                 
                             } catch (error) {
                                 console.log(error);
@@ -412,4 +418,11 @@ function loader(show = true) {
 
 // Call the function on page load
 document.addEventListener("DOMContentLoaded", showDetailsProfile);
+
+
+// Function to remove the modal overlay after closing the modal
+function removeModalBackdrop() {
+    let modalBackdrops = document.querySelectorAll('.modal-backdrop');
+    modalBackdrops.forEach(backdrop => backdrop.remove());
+}
 

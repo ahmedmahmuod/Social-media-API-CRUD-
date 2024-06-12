@@ -43,17 +43,20 @@ function register() {
             }
             reader.readAsDataURL(imgValue);
 
-
-
             // Access to login modal to disable
             const modalRegister = document.querySelector('#register-modal');
             const modalInstance = bootstrap.Modal.getInstance(modalRegister);
             modalInstance.hide();
+
             showIconPost('visible');
             
             // Show success after registering a new user
             showAlertSuccessLogin('New User Register Successfully!', `Hello ${result.user.name}`, 'success');
-
+            
+            removeModalBackdrop();
+            setTimeout (() => {
+                location.reload();
+            },1000);
         } catch (error) {
             if (error.response && error.response.data) {
                 // Handle validation errors
