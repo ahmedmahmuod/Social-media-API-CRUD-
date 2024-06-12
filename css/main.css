@@ -1,0 +1,371 @@
+body {
+    background-color: #536823;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.navbar {
+    color: white;
+    background-color: #84a043;
+
+}
+.navbar a {
+    color: white;
+    font-size: 25px;
+    
+}
+a:hover {
+    color: rgb(185, 185, 185) !important;
+}
+
+
+.posts {
+    padding: 20px;
+    position: relative;
+}
+
+.card,
+.post {
+    padding: 20px;
+    font-size: 20px;
+    border: none;
+    /* border: 3px solid rgba(255, 255, 255, 0.562); */
+    background-color: #84a043;
+    transition: .4s;
+}
+
+
+.headPostDetails {
+    font-size: 50px;
+    text-align: center;
+}
+
+.card h6,
+.post h6 {
+    color: rgb(182, 182, 182);
+    font-size: 17px;
+}
+
+.card p,
+.post p {
+    margin-bottom: 7px;
+    font-size: 20px;
+    transition: .2s;
+}
+
+.card .img-post,
+.post .img-post {
+    width: 100%;
+    border-radius: 7px;
+
+}
+
+.card .card-header {
+    background-color: transparent;
+    display: flex;
+    justify-content: space-between;
+}
+.post .card-header {
+    background-color: transparent;
+    display: flex;
+    justify-content: space-between;
+}
+
+ .editPost {
+    outline: none;
+    border: none;
+    padding: 7px 25px;
+    border-radius: 10px;
+    background-color: rgb(44, 44, 44) !important;
+    color: white !important;
+    font-size: 20px;
+    transition: .2s;
+    display: none;
+}
+
+.editPost {
+    cursor: pointer;
+    transition: .2s;
+}
+
+.details  {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    gap: 15px;
+}
+
+.details .delete-post-btn {
+    outline: none;
+    border: none;
+    padding: 7px 25px;
+    border-radius: 10px;
+    background-color: rgb(255, 0, 0);
+    color: white !important;
+    font-size: 20px;
+    transition: .2s;
+    display: none;
+}
+.details .delete-post-btn:hover {
+    background-color: rgb(197, 17, 17);
+}
+
+.card .card-body {
+    transition: .2s;
+}
+.card .card-body:hover {
+    background-color: #536823;
+    cursor: pointer;
+}
+
+.posts .editPost:hover {
+    background-color: rgb(56, 56, 56);
+}
+
+.post .card-header {
+    border-bottom: 2px solid #536823;
+}
+
+.card .card-header span,
+.post .card-header span {
+    cursor: pointer;    
+}
+
+.card .card-header span:hover,
+.post .card-header span:hover {
+    text-decoration-line: underline;
+}
+
+.post .user-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.post .comments {
+    padding: 20px;
+    border-radius: 7px;
+}
+
+.post .comment {
+    background-color: #536823;
+    padding: 10px;
+    border-radius: 7px;
+    margin-bottom: 10px;
+}
+
+.post .comments #create-comment{
+    display: flex;
+    width: 100%;
+}
+.post .comments #type-comment{
+    border: none;
+    outline: none;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.post .comments #add-comment{
+    border: none;
+    outline: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    color: white;
+    transition: .2s;
+    background-color: rgb(44, 44, 44) !important;
+}
+.post .comments #add-comment:active {
+    background-color: rgba(44, 44, 44, 0.692) !important;
+}
+.body-comment {
+    overflow-wrap: anywhere;
+    line-height: normal;
+}
+
+.profile-details-header {
+    cursor: pointer;
+    background-color: rgb(44, 44, 44);
+    
+}
+
+.profile-details-header:hover {
+    background-color: rgba(44, 44, 44, 0.705);
+    transition: .2s;
+    
+}
+
+.profile-details-header p {
+    font-size: 18px;
+    display: contents;
+    transition: .2s;
+    text-decoration-line: underline;
+
+}
+.profile-details-header img {
+    transition: .2s;
+    margin-right: 5px;
+}
+
+
+/* main-content */
+.main-content {
+    position: relative;
+}
+
+/* add post icon */
+.add-post-icon {
+    position: fixed;
+    right: 70px;
+    bottom: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: .3s;
+    visibility: hidden;
+    background-color: rgb(44, 44, 44) !important;
+}
+
+.add-post-icon:hover {
+    padding: 19px;
+    background-color: rgba(44, 44, 44, 0.733) !important;
+}
+.add-post-icon span {
+    color: white;
+    font-size: 30px;
+}
+
+/* Profile page */
+.head-profile {
+    background-color: #84a043;
+    color: white;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0px 20px;
+}
+
+.head-profile .user-profile {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+.head-profile .details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.head-profile img {
+    width: 100px;
+    height: 100px;
+    padding: 0;
+    box-shadow: 0px 0px 40px -10px black;
+}
+
+.head-profile h5 {
+    color: rgb(231, 229, 229);
+    display: flex;
+    align-items: center;
+}
+
+.head-profile p {
+    color: rgb(231, 229, 229);
+    background-color: rgb(44, 44, 44);
+    padding: 5px 10px;
+    border-radius: 14px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    margin-bottom: 5px;
+    width: fit-content;
+}
+
+.head-profile .user-posts h1 {
+    color: rgb(197, 197, 197);
+    font-size: 16px;
+    text-align: center;
+    margin: 20px 0px;
+}
+
+.head-profile .user-posts span {
+    color: white;
+    background-color: rgb(44, 44, 44);
+    padding: 5px 10px;
+    border-radius: 15px;
+    margin-left: 10px;
+    font-size: 30px;
+    
+}
+
+/* Modals */
+.modal-style {
+    background-color: rgb(44, 44, 44) !important;
+    color: white;
+}
+.modal-style-bg{
+    background-color: rgba(44, 44, 44, 0.637) !important;
+
+}
+
+/* loader animation */
+.loader-main {
+    background-color: rgb(0 0 0 / 64%);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 1000000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loader {
+    position: fixed;
+}
+
+.lds-ring,
+.lds-ring div {
+  box-sizing: border-box;
+}
+.lds-ring {
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+    margin: auto;
+    z-index: 999129;
+
+}
+.lds-ring div {
+  color: rgb(214, 214, 214);
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border: 8px solid currentColor;
+  border-radius: 50%;
+  animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  border-color: currentColor transparent transparent transparent;
+}
+.lds-ring div:nth-child(1) {
+  animation-delay: -0.45s;
+}
+.lds-ring div:nth-child(2) {
+  animation-delay: -0.3s;
+}
+.lds-ring div:nth-child(3) {
+  animation-delay: -0.15s;
+}
+@keyframes lds-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
